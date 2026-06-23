@@ -3,7 +3,7 @@
 > Stake GEN, then type your way up a 6-floor tower an ape guards. An AI-validator panel — not a
 > server — decides what happens on every move and writes your fate on-chain.
 
-**Status:** 🟡 **Phase 1 contract built.** Deploying + validating next.
+**Status:** **Live on Studionet** · Contract `0xD49CA01F9A04FdDC9F412c9E42eD0B7E53b6DdaD`
 
 ## Why GenLayer (the whole point)
 There's no central game server deciding outcomes. The player types a free-text action; an
@@ -25,14 +25,14 @@ instant-win) are enforced deterministically — so no player can prompt-inject t
 
 ## Tech stack
 - **Intelligent Contract:** Python + GenVM — the Game Master, run state, stake pot, payouts.
-- **Frontend:** Next.js + GenLayerJS + viem; injected-wallet only (planned).
+- **Frontend:** Next.js 16 + GenLayerJS + viem; injected-wallet only (EIP-6963).
 - **Backend:** none.
 
 ## Repo layout
 ```
 docs/        PRD.md
 contracts/   apex.py      (the Intelligent Contract — the Game Master)
-web/         frontend (planned)
+web/         frontend     (Next.js + Tailwind + SpaceX-inspired design)
 ```
 
 _Sibling projects:_ [Credence](https://github.com/Hemmy1417/Credence) (identity) ·

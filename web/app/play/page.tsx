@@ -7,8 +7,7 @@ import {
   genFromWei, genToWei, hpPercent, hpColor,
   type Run, type Stats,
 } from "@/lib/apex";
-import { CONTRACT_CONFIGURED, TOP_FLOOR } from "@/lib/config";
-import { explorerTxUrl } from "@/lib/config";
+import { CONTRACT_CONFIGURED, TOP_FLOOR, explorerTxUrl } from "@/lib/config";
 
 /* ─── Tower visualization ─── */
 function Tower({ floor, state }: { floor: number; state: string }) {
@@ -117,8 +116,8 @@ function DeathScreen({ run, onRetry }: { run: Run; onRetry: () => void }) {
 }
 
 /* ─── Full-screen win ─── */
-function WinScreen({ run, onClaim, busy, claimed }: {
-  run: Run; onClaim: () => void; busy: boolean; claimed: boolean;
+function WinScreen({ run, onClaim, onClose, busy, claimed }: {
+  run: Run; onClaim: () => void; onClose: () => void; busy: boolean; claimed: boolean;
 }) {
   return (
     <div className="endscreen endscreen-win">
@@ -132,10 +131,15 @@ function WinScreen({ run, onClaim, busy, claimed }: {
         </div>
         {!claimed ? (
           <button onClick={onClaim} disabled={busy} className="btn-primary mt-10 !px-10 !py-3 text-sm">
-            {busy ? "Claiming…" : `Claim ${genFromWei(BigInt(Number(run.stake)) * BigInt(2))} GEN`}
+            {busy ? "Claiming…" : `Claim ${genFromWei(BigInt(run.stake) * BigInt(2))} GEN`}
           </button>
         ) : (
-          <div className="mt-10 mono text-sm text-won">Reward claimed ✓</div>
+          <div className="mt-10 flex flex-col items-center gap-4">
+            <div className="mono text-sm text-won">Reward claimed ✓</div>
+            <button onClick={onClose} className="btn-ghost !px-8 !py-2.5 text-sm">
+              Play again
+            </button>
+          </div>
         )}
       </div>
     </div>
@@ -247,7 +251,7 @@ export default function PlayPage() {
 
   /* ─── Win overlay ─── */
   if (showWin && won && run) {
-    return <WinScreen run={run} onClaim={onClaim} busy={busy} claimed={!!run.claimed} />;
+    return <WinScreen run={run} onClaim={onClaim} onClose={() => setShowWin(false)} busy={busy} claimed={!!run.claimed} />;
   }
 
   /* ─── Entry screen ─── */
@@ -311,6 +315,12 @@ export default function PlayPage() {
 
         {/* Center: Narrative + Action */}
         <div className="game-main-col">
+          {/* Mobile floor indicator (hidden on desktop where tower sidebar shows) */}
+          <div className="sm:hidden flex items-center justify-between mb-4">
+            <span className="display text-sm">FLOOR {run!.floor} <span className="text-muted">/ {TOP_FLOOR}</span></span>
+            <span className="eyebrow">Turn {run!.turns}</span>
+          </div>
+
           {/* HP */}
           <HpGauge hp={run!.hp} max={run!.max_hp} />
 

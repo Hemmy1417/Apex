@@ -1,0 +1,13 @@
+node_modules/
+web/.next/
+.env
+.env.local
+.env*.local
+web/.env
+web/.env*.local
+.DS_Store
+*.log
+contracts/_*.py
+web/AGENTS.md
+web/CLAUDE.md
+web/DESIGN.md

@@ -6,6 +6,7 @@ import { WalletProvider } from "@/lib/wallet";
 import { ConnectButton } from "@/components/ConnectButton";
 import { ReloadToHome } from "@/components/ReloadToHome";
 import { CONTRACT_CONFIGURED, NETWORK_LABEL } from "@/lib/config";
+import { ApexWordmark } from "@/components/Logo";
 
 const space = Space_Grotesk({ subsets: ["latin"], weight: ["400", "700"], variable: "--font-space" });
 const inter = Inter({ subsets: ["latin"], weight: ["400", "500"], variable: "--font-inter" });
@@ -30,8 +31,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <ReloadToHome />
           <header className="sticky top-0 z-40 bg-canvas/85 backdrop-blur border-b border-hairline">
             <nav className="mx-auto max-w-6xl px-5 h-14 flex items-center justify-between">
-              <Link href="/" className="wordmark text-lg hover:opacity-80 transition-opacity">
-                APEX
+              <Link href="/" className="hover:opacity-80 transition-opacity">
+                <ApexWordmark />
               </Link>
               <div className="flex items-center gap-1 sm:gap-3">
                 {navLinks.map((l) => (
@@ -58,7 +59,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
           <footer className="border-t border-hairline">
             <div className="mx-auto max-w-6xl px-5 py-12 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-              <span className="wordmark text-lg">APEX</span>
+              <ApexWordmark />
               <p className="eyebrow">The AI decides your fate · Sealed on GenLayer · {NETWORK_LABEL}</p>
             </div>
           </footer>

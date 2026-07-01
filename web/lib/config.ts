@@ -9,7 +9,7 @@ export const CHAIN_NAME = CHAIN.name;
 export const NETWORK_LABEL = IS_BRADBURY ? "Testnet Bradbury" : "Studionet";
 export const GAS_SPONSORED = !IS_BRADBURY;
 
-export const CONTRACT_ADDRESS = (process.env.NEXT_PUBLIC_CONTRACT_ADDRESS || "") as `0x${string}`;
+export const CONTRACT_ADDRESS = (process.env.NEXT_PUBLIC_CONTRACT_ADDRESS || "0x08CeEd3e1C88D7666D08828a8d4212e3244A80f6") as `0x${string}`;
 export const CONTRACT_CONFIGURED = /^0x[a-fA-F0-9]{40}$/.test(CONTRACT_ADDRESS);
 
 export const EXPLORER_URL = (

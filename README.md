@@ -3,7 +3,7 @@
 > Stake GEN, then type your way up a 6-floor tower an ape guards. An AI-validator panel — not a
 > server — decides what happens on every move and writes your fate on-chain.
 
-**Status:** **Live on Studionet** · Contract `0xD49CA01F9A04FdDC9F412c9E42eD0B7E53b6DdaD`
+**Status:** **Live on Studionet** · Contract `0x08CeEd3e1C88D7666D08828a8d4212e3244A80f6`
 
 ## Why GenLayer (the whole point)
 There's no central game server deciding outcomes. The player types a free-text action; an

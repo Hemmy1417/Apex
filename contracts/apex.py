@@ -19,8 +19,8 @@ MAX_ACTION = 500
 REWARD_MULT = 2  # a win pays 2x your stake, capped at the pot
 
 _PRINCIPLE = (
-    "Outputs are equivalent if they agree on the outcome category and the climb value (0 or 1) "
-    "and the hp_change rounded to the nearest 10, even if the narrative wording differs."
+    "Outputs are equivalent if they agree on the outcome category (SUCCESS, PARTIAL, FAIL, or FATAL) "
+    "and the climb value (0 or 1), even if the hp_change, item, or narrative wording differs."
 )
 
 

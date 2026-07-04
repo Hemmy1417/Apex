@@ -7,6 +7,7 @@ import { ConnectButton } from "@/components/ConnectButton";
 import { ReloadToHome } from "@/components/ReloadToHome";
 import { CONTRACT_CONFIGURED, NETWORK_LABEL } from "@/lib/config";
 import { ApexWordmark } from "@/components/Logo";
+import { LiveBackdrop } from "@/components/LiveBackdrop";
 
 const space = Space_Grotesk({ subsets: ["latin"], weight: ["400", "700"], variable: "--font-space" });
 const inter = Inter({ subsets: ["latin"], weight: ["400", "500"], variable: "--font-inter" });
@@ -27,6 +28,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={`${space.variable} ${inter.variable} ${jetbrains.variable}`}>
       <body className="min-h-screen flex flex-col">
+        <LiveBackdrop />
         <WalletProvider>
           <ReloadToHome />
           <header className="sticky top-0 z-40 bg-canvas/85 backdrop-blur border-b border-hairline">

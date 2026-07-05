@@ -62,7 +62,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <footer className="border-t border-hairline">
             <div className="mx-auto max-w-6xl px-5 py-12 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
               <ApexWordmark />
-              <p className="eyebrow">The AI decides your fate · Sealed on GenLayer · {NETWORK_LABEL}</p>
+              <p className="eyebrow">The AI decides your fate · Sealed on GenLayer · {NETWORK_LABEL} · <a href={`https://explorer-studio.genlayer.com/address/${process.env.NEXT_PUBLIC_CONTRACT_ADDRESS ?? ""}`} target="_blank" rel="noopener noreferrer" style={{ textDecoration: "underline" }}>Verify on explorer ↗</a></p>
             </div>
           </footer>
         </WalletProvider>

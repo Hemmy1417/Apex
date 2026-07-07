@@ -3,7 +3,10 @@
 > Stake GEN, then type your way up a 6-floor tower an ape guards. An AI-validator panel — not a
 > server — decides what happens on every move and writes your fate on-chain.
 
-**Status:** **Live on Studionet** · Contract `0x08CeEd3e1C88D7666D08828a8d4212e3244A80f6`
+**Status:** **Live on Studionet** · Contract `0x85CaBa6a0B00DaDc999a7DfDdad311F76CBB34F3`
+
+> **Payout fix (July 2026).** Wallet payouts are sent as EVM external messages (an empty `@gl.evm.contract_interface` proxy executed by the contract's ghost account). The previous GenVM-call pattern errored at finalization on plain wallets and stranded the value; the contract was redeployed at the address above with the corrected transfer path.
+
 
 ## Why GenLayer (the whole point)
 There's no central game server deciding outcomes. The player types a free-text action; an
